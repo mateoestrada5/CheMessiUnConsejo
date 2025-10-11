@@ -55,6 +55,34 @@
             const messageContainer = document.getElementById('message-container');
             const feelingInput = document.getElementById('feeling-input');
 
+            // 🔥 KEEP-ALIVE SYSTEM
+            async function keepFunctionsAlive() {
+                try {
+                    // Ping a la función de health check
+                    await fetch('/.netlify/functions/ping', {
+                        method: 'GET',
+                        mode: 'cors'
+                    });
+                    
+                    // También hacer un ping muy ligero a la función principal
+                    await fetch('/.netlify/functions/generate', {
+                        method: 'OPTIONS',
+                        mode: 'cors'
+                    });
+                    
+                    console.log('🔥 Functions kept alive:', new Date().toLocaleTimeString());
+                } catch (error) {
+                    console.log('⚠️ Keep-alive ping failed:', error);
+                }
+            }
+
+            // Ejecutar keep-alive cada 14 minutos (840 segundos)
+            // Netlify functions se enfrían después de ~15 minutos de inactividad
+            setInterval(keepFunctionsAlive, 14 * 60 * 1000);
+            
+            // También ejecutar un ping inicial después de 30 segundos
+            setTimeout(keepFunctionsAlive, 30 * 1000);
+
             function displayImage() {
                 const img = document.createElement('img');
                 // Usar imagen local de la carpeta public
