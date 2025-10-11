@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messi Tomando Fernet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
         .small-loader {
             border: 4px solid #f3f3f3;
@@ -23,22 +26,22 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen py-8">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen py-8">
     <div class="w-full max-w-lg p-4 sm:p-6 lg:p-8">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="p-6">
-                <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 dark:text-white mb-4">Messi tomando un fernet te quiere ayudar</h1>
-                <div id="image-container" class="w-full h-96 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-4">
+                <h1 class="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4">Messi tomando un fernet te quiere ayudar</h1>
+                <div id="image-container" class="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
                     <!-- Image will be loaded here -->
                 </div>
-                <p class="text-center text-gray-600 dark:text-gray-300 mb-4">"¿Cómo la estás pasando, máquina? Contame un poco..."</p>
-                <textarea id="feeling-input" class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" rows="3" placeholder="Escribí acá cómo te sentís..."></textarea>
+                <p class="text-center text-gray-600 mb-4">¿Cómo la estás pasando, máquina? <br> Contame un poco...</p>
+                <textarea id="feeling-input" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" rows="3" placeholder="Escribí acá cómo te sentís..."></textarea>
             </div>
-             <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+             <div class="p-6 border-t border-gray-200">
                 <button id="message-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
                     Pedir un consejo
                 </button>
-                <div id="message-container" class="mt-4 text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg hidden">
+                <div id="message-container" class="mt-4 text-gray-700 bg-gray-50 p-4 rounded-lg hidden">
                      <!-- Message content will be injected here -->
                 </div>
             </div>
@@ -79,7 +82,7 @@
                 messageContainer.innerHTML = `
                     <div class="flex justify-center items-center gap-3">
                         <div class="small-loader"></div>
-                        <p class="text-gray-600 dark:text-gray-300">Messi está pensando wachin, no te pongas ansioso!</p>
+                        <p class="text-gray-600">Messi está pensando...</p>
                     </div>
                 `;
                 messageContainer.classList.remove('hidden');
