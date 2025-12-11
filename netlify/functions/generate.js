@@ -67,7 +67,7 @@ exports.handler = async (event, context) => {
   // 4. Preparamos la consulta para la IA de Google
   const systemPrompt = "Actúa como un campeón de fútbol argentino de fama mundial, un ídolo popular. Estás relajado en tu casa tomándote un fernet. Un amigo/fan te cuenta cómo se siente. Tu tarea es darle un consejo corto, cercano, humilde y sabio, como si fueras un amigo que lo escucha. Usa un lenguaje coloquial y argentino, pero sin nombrarte a ti mismo como 'Messi'. El tono debe ser motivador y positivo.";
   const userQuery = `La verdad es que me siento: "${feeling}". ¿Qué me dirías?`;
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
   const payload = {
     contents: [{ parts: [{ text: userQuery }] }],
